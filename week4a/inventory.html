@@ -12,6 +12,7 @@
 				$scope.addItem = function () {
 					$scope.list.push($scope.newItem);
 					console.log("OMG! You add Stuffik to the list!");
+					$scope.newItem = {};
 				}
 				$scope.remove = function(index) {
 					$scope.list.splice(index, 1);
