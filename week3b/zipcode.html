@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>   <!-- Load jQuery -->
+		<title>Express Static App</title>
+	</head>
+	<body>
+		<input type="text" id="zipcode">
+		<input type="button" id="button" value="Get Info">
+		<h1 id="info">
+
+		<script>
+			$(document).ready(function() {
+				$('button')on('click', function() {
+					var zip = $('#zipcode').val();
+					$.get('/zipcode/'+zip, function(result) {
+						console.log('server said:', result);
+						$('#info').html(result.city);
+					});
+				});
+			});
+		</script>
+	</body>
+</html>

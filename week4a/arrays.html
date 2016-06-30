@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Angular Arrays!</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script>
+			angular.module('myApp', []);
+			angular.module('myApp').controller('TestCtrl', function($scope) {
+				$scope.list = [{name:'Cat', price:24.99}];
+				$scope.addItem = function () {
+					// var item = {
+					// 	name: $scope.newItem,
+					// 	price: $scope.newPrice
+					// };
+					$scope.list.push($scope.newItem);
+
+					// $scope.list.push({name:$scope.newItem});  1 LINE PROPER VERSION
+					console.log("OMG! You add stuffik to the list!");
+
+				}
+
+			});
+
+		</script>
+	</head>
+	<body ng-app="myApp" ng-controller="TestCtrl">
+		Name: <input type="text" ng-model="newItem.name">
+		Name: <input type="number" ng-model="newItem.price">
+		<input type="button" value="Add Item" ng-click="addItem()" ng-disabled="!newItem.name || !newItem.price">
+
+		<ul>
+			<li ng-repeat="item in list">
+				You can buy a {{item.name}} for {{item.price | currency}}!
+			</li>
+		</ul>
+	</body>
+</html>

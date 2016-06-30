@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Rockem Sockem Web Pages!</title>
+		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>   <!-- Load jQuery -->
+	</head>
+	<body>
+		<center>
+			<h2>Pick An Ass-Hat To Vote For</h2>
+			<table>
+				<tr align="center">
+					<td>
+						<h3>Ass-Hat 1</h3>
+					</td>
+					<td>
+						<h3>Ass-Hat 2</h3>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img label="ass 1" width='250' height='200' src="http://freekenthovind.com/wp-content/uploads/2016/01/crazy-hillary.jpg">
+					</td>
+					<td>
+						<img width='250' height='200' src="http://i.telegraph.co.uk/multimedia/archive/03372/Donald-Trump_3372655k.jpg">
+					</td>
+				</tr>
+			</table>
+		</center>
+		<div align="center">
+			<input type="text" id="myName">                           <!-- This is an input text field for the user to tell us their name -->
+			<input type="button" id="myButton" value="VOTE!">   <!-- Our submit button.  'value' is the button label -->
+
+			<div id="nameOutput"></div>                               <!-- Create an empty div for our output -->
+
+			<script type="text/javascript">
+				$(document).ready(function() {                        // Our client-side program waits till the document and jQuery are ready
+					console.log('jQuery ready!');
+
+					$('#myButton').on('click', function() {           // Attach a click event handler onto our button
+					var myNameText = $('#myName').val();
+					var outputHtml = '<h1>YOU SERIOUSLY VOTED FOR ' + myNameText + '???!!!</h1>';
+					$('#nameOutput').html(outputHtml);
+					});
+				});
+			</script>
+
+
+
+			<hr width="80%">
+			<h2>jQuery Is Smarter Than Both Of The Above Candidates!</h2>
+			<label>Hillary's IQ </label><input type="number" id="num1"><br>
+			<label>Trump's IQ </label><input type="number" id="num2"><br>
+			<input type="button" id="myButton2" value="Add">
+			<input type="button" id="myButton3" value="Subtract">
+			<input type="button" id="myButton4" value="Mult">
+			<input type="button" id="myButton5" value="Divide"><br>
+			<div id="radOutput"></div>
+
+			<script type="text/javascript">
+				$(document).ready(function() {                        // Our client-side program waits till the document and jQuery are ready
+					console.log('jQuery ready!');
+
+					var num1;
+					var num2;
+
+					$('#myButton2').on('click', function() {           // Attach a click event handler onto our button
+						var num1Val = Number($('#num1').val());
+						var num2Val = Number($('#num2').val());
+						var product = num1Val + num2Val;
+						// $('#radOutput').text(product);
+						console.log(product)
+						var outputHtml = '<h1>DUDE! They have a combined IQ of ' + product + '!!!</h1>';
+						$('#radOutput').html(outputHtml);
+					});
+					$('#myButton3').on('click', function() {           // Attach a click event handler onto our button
+						var num1Val = Number($('#num1').val());
+						var num2Val = Number($('#num2').val());
+						var product = num1Val - num2Val;
+						// $('#radOutput').text(product);
+						console.log(product)
+						var outputHtml = '<h1>DUDE! They have a combined IQ of ' + product + '!!!</h1>';
+						$('#radOutput').html(outputHtml);
+					});
+					$('#myButton3').on('click', function() {           // Attach a click event handler onto our button
+						var num1Val = Number($('#num1').val());
+						var num2Val = Number($('#num2').val());
+						var product = num1Val * num2Val;
+						// $('#radOutput').text(product);
+						console.log(product)
+						var outputHtml = '<h1>DUDE! They have a combined IQ of ' + product + '!!!</h1>';
+						$('#radOutput').html(outputHtml);
+					});
+					$('#myButton4').on('click', function() {           // Attach a click event handler onto our button
+						var num1Val = Number($('#num1').val());
+						var num2Val = Number($('#num2').val());
+						var product = num1Val / num2Val;
+						// $('#radOutput').text(product);
+						console.log(product)
+						var outputHtml = '<h1>DUDE! They have a combined IQ of ' + product + '!!!</h1>';
+						$('#radOutput').html(outputHtml);
+					});
+				});
+			</script>
+
+
+
+		</div>
+	</body>
+</html>

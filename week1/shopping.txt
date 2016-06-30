@@ -1,0 +1,4 @@
+Eggs
+Milk
+Coffee
+Water

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>   <!-- Load jQuery -->
+</head>
+<body>
+
+    <script type="text/javascript">
+        $(document).ready(function() {                        // Our client-side program waits till the document and jQuery are ready
+            console.log('jQuery ready!');
+
+            $.get('/time', function(result) {                 // Send a GET request to our /time route
+                console.log('The server says: ', result);     // Console log whatever the server returned
+            });
+        });
+    </script>
+</body>
+</html>
